@@ -83,7 +83,7 @@ export default function Nav() {
                 className="h-8 me-3"
                 alt="FlowBite Logo"
               /> */}
-              <span className=" hidden sm:block self-center text-gray-500 text-xl font-bold sm:text-2xl whitespace-nowrap dark:text-white">
+              <span className=" hidden sm:block self-center text-gray-900 text-xl font-bold sm:text-2xl whitespace-nowrap ">
                 MultiStore
               </span>
             </a>
@@ -92,7 +92,7 @@ export default function Nav() {
             <div className="flex items-center ms-3 mt-1 flex-grow ">
               <div className="flex-grow ">
                 <form className="max-w-lg mx-auto ">
-                  <label className="mb-2  text-sm font-medium text-gray-900 sr-only ">
+                  <label className="mb-2  text-sm font-medium sr-only ">
                     Buscar
                   </label>
                   <div className="relative">
@@ -120,7 +120,7 @@ export default function Nav() {
                         setBusqueda(e.target.value.toLowerCase())
                       }
                       id="default-search"
-                      className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500   "
                       placeholder="Buscar Marca, Ram..."
                     />
                   </div>

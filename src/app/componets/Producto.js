@@ -75,9 +75,9 @@ export default function Producto({ id }) {
                   ) : (
                     <FaBookmark className="w-8 h-8 text-gray-500" />
                   )}
-                  <div className="font-medium dark:text-white">
+                  <div className="font-medium ">
                     <div>{esp.cualidad}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="text-sm text-gray-500 ">
                       {esp.referencia_esp}
                     </div>
                   </div>
@@ -124,13 +124,13 @@ export default function Producto({ id }) {
 
               <div className="">
                 <div className="col-span-4 sm:col-span-2 md:col-span-2 lg:col-span-1 xl:col-span-1">
-                  <div className="mb-2 font-medium text-gray-800 dark:text-gray-300">
+                  <div className="mb-2 font-medium text-gray-800 ">
                     MultiStore | SKU: {id}
                   </div>
                   <ul className="mb-4 -ml-2 flex md:order-1 md:mb-0">
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="Twitter"
                         href="#"
                       >
@@ -153,7 +153,7 @@ export default function Producto({ id }) {
 
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="Instagram"
                         href="#"
                       >
@@ -178,7 +178,7 @@ export default function Producto({ id }) {
 
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="Facebook"
                         href="#"
                       >
@@ -201,7 +201,7 @@ export default function Producto({ id }) {
 
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="RSS"
                         href="#"
                       >
@@ -226,7 +226,7 @@ export default function Producto({ id }) {
 
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="Github"
                         href="https://github.com/onwidget/tailnext"
                       >
@@ -249,7 +249,7 @@ export default function Producto({ id }) {
 
                     <li>
                       <a
-                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                        className="text-muted inline-flex items-center rounded-lg p-2.5 text-sm hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200 "
                         aria-label="Github"
                         href="https://github.com/onwidget/tailnext"
                       >

@@ -50,7 +50,7 @@ export default function Nav() {
   }, [busqueda]);
 
   return (
-    <nav className="fixed top-0 z-50 w-full bg-white border-b border-gray-200 ">
+    <nav className="fixed top-0 z-50 w-full bg-slate-50 border-b border-gray-200 ">
       <div className="px-3 py-3 lg:px-5 lg:pl-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center justify-start rtl:justify-end">
@@ -92,13 +92,13 @@ export default function Nav() {
             <div className="flex items-center ms-3 mt-1 flex-grow ">
               <div className="flex-grow ">
                 <form className="max-w-lg mx-auto ">
-                  <label className="mb-2  text-sm font-medium text-gray-900 sr-only dark:text-white">
+                  <label className="mb-2  text-sm font-medium text-gray-900 sr-only ">
                     Buscar
                   </label>
                   <div className="relative">
                     <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                       <svg
-                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        className="w-4 h-4 text-gray-500 "
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -131,9 +131,9 @@ export default function Nav() {
                 <div className="flex items-center gap-4 mb-3 ml-4">
                   <FaLaptop className="w-8 h-8 text-gray-500" />
 
-                  <div className="font-medium dark:text-white">
+                  <div className="font-medium ">
                     <div>{user ? user.nombre : null}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">
+                    <div className="text-sm text-gray-500 ">
                       {user ? user.rol : null}
                     </div>
                   </div>

@@ -96,7 +96,7 @@ export default function Aside() {
               {/* Lista de marcas */}
               <li className="">
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       className="w-5 h-5 rounded-full mr-2 text-[#31C48D] bg-[#F3FAF7] border-[#31C48D]  focus:ring-blue-100 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"
                       type="checkbox"
@@ -114,8 +114,8 @@ export default function Aside() {
                 </div>
               </li>
               <li>
-                <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full m-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                <div className="flex items-center p-2 rounded hover:bg-gray-100 ">
+                  <label className="w-full m-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Lenovo"
@@ -134,7 +134,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Dell"
@@ -153,7 +153,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Asus"
@@ -172,7 +172,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="MSI"
@@ -191,7 +191,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Acer"
@@ -210,7 +210,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Samsung"
@@ -259,7 +259,7 @@ export default function Aside() {
               {/* Lista de procesadores */}
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Intel® Core™ i3"
@@ -278,7 +278,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Intel® Core™ i5"
@@ -297,7 +297,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Intel® Core™ i7"
@@ -316,7 +316,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Intel® Core™ i9"
@@ -335,7 +335,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Ryzen™ 3"
@@ -354,7 +354,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Ryzen™ 5"
@@ -373,7 +373,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Ryzen™ 7"
@@ -392,7 +392,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="Intel® Celeron®"
@@ -437,7 +437,7 @@ export default function Aside() {
               {/* Lista de RAM */}
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="4GB"
@@ -456,7 +456,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="8GB"
@@ -475,7 +475,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="12GB"
@@ -494,7 +494,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="16GB"
@@ -539,7 +539,7 @@ export default function Aside() {
               {/* Lista de tamaños de pantalla */}
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="15.6"
@@ -558,7 +558,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="16"
@@ -577,7 +577,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="17.3"
@@ -596,7 +596,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="13.3"
@@ -615,7 +615,7 @@ export default function Aside() {
               </li>
               <li>
                 <div className="flex items-center p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-600">
-                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded dark:text-gray-300">
+                  <label className="w-full ms-1 text-sm font-medium text-gray-900 rounded ">
                     <input
                       type="checkbox"
                       value="14.0"

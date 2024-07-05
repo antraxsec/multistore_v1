@@ -332,9 +332,8 @@ export default function Producto({ id }) {
 
                 <h2 className=" absolute bottom-2 font-serif text-[10px]  text-end mr-5  text-green-700">
                   Bs.{" "}
-                  {Number(
-                    productoEncontrado?.precios["0"]?.valor_precio
-                  ).toFixed(2) || "Sin precio"}
+                  {Number(row?.precios["0"]?.valor_precio).toFixed(2) ||
+                    "Sin precio"}
                 </h2>
               </div>
             ))}

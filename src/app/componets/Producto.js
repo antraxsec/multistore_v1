@@ -293,7 +293,7 @@ export default function Producto({ id }) {
         <h1 className="my-4 font-bold text-xl">Articulos relacionados</h1>
         <div className=" my-2">
           <div className="  grid grid-cols-1 lg:grid-cols-5 first-letter: gap-3 ">
-            {productosFiltrados.slice(0, 5).map((row, i) => (
+            {productosFiltrados.slice(0, 10).map((row, i) => (
               <div
                 onClick={() => router.push(`/producto/${row.id_producto}`)}
                 className="border relative p-6 rounded-2xl shadow-md bg-gray-50"

@@ -69,7 +69,7 @@ export default function Aside() {
       } sm:translate-x-0  bg-white border-r border-gray-100  dark:bg-dark-800 dark:border-dark-700 `}
       aria-label="Sidebar"
     >
-      <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800 scrollbar">
+      <div className="h-full px-3 pb-4 overflow-y-auto bg-white  scrollbar">
         <ul className="space-y-2 font-medium mt-3">
           {/* Sección de Marcas */}
           <li>

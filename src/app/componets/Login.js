@@ -99,11 +99,9 @@ const Login = () => {
   // }
 
   return (
-    <div className="">
+    <div className="border p-20 rounded-3xl bg-white shadow-md">
       <h1 className="text-center my-3 sm:block text-1xl font-extrabold text-gray-900 dark:text-white md:text-4xl lg:text-2xl">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#2e60de] from-sky-200">
-          Login
-        </span>{" "}
+        <span className="text-gray-500 font-bold text-3xl">Login</span>{" "}
       </h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
 
@@ -111,7 +109,7 @@ const Login = () => {
         <div className="mb-5">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             {" "}
-            email
+            Correo
           </label>
           <input
             type="email"
@@ -124,7 +122,7 @@ const Login = () => {
         <div className="mb-5">
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
             {" "}
-            password
+            Constraseña
           </label>
           <input
             type="password"
@@ -134,19 +132,7 @@ const Login = () => {
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
         </div>
-        <div className="flex items-start mb-5">
-          <div className="flex items-center h-5">
-            <input
-              id="remember"
-              type="checkbox"
-              value=""
-              className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-            />
-          </div>
-          <label className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-            Remember me
-          </label>
-        </div>
+
         {suspense ? (
           <button
             disabled
@@ -175,7 +161,7 @@ const Login = () => {
         ) : (
           <button
             type="submit"
-            className="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            className="text-white w-full h-12 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-semibold rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
           >
             Ingresar
           </button>

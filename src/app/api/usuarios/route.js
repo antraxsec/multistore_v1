@@ -1,4 +1,5 @@
 // app/api/usuarios/route.js
+import { useProductos } from "@/context/Context";
 import { db } from "../../../utils/db";
 
 export async function GET(req) {
@@ -19,6 +20,7 @@ FROM
 		cuenta_a.cod_cuenta = salida_v.cod_responsableFK
 `);
     console.log(rows); // Esto imprimirá los datos en la consola del servidor
+
     return new Response(JSON.stringify(rows), {
       status: 200,
       headers: { "Content-Type": "application/json" },

@@ -73,7 +73,7 @@ export default function Aside() {
       <div className="h-full px-3 pb-4 overflow-y-auto bg-white  scrollbar">
         <ul className="space-y-2 font-medium mt-3">
           {/* Sección de Marcas */}
-          <li>
+          {/* <li>
             <Link
               href="/estadisticas"
               className="flex items-center p-2 text-gray-900 rounded-full dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
@@ -90,7 +90,7 @@ export default function Aside() {
               </svg>
               <span className="ms-3 text-gray-400">Estadistica</span>
             </Link>
-          </li>
+          </li> */}
           <li>
             <a
               href="#"

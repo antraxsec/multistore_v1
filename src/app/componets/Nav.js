@@ -84,7 +84,7 @@ export default function Nav() {
                 alt="FlowBite Logo"
               /> */}
               <span className=" hidden sm:block self-center text-gray-900 text-xl font-bold sm:text-2xl whitespace-nowrap ">
-                MultiStore
+                MultiStore aaaaa
               </span>
             </a>
           </div>

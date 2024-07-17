@@ -17,75 +17,79 @@ import io from "socket.io-client";
 
 const socket = io("http://localhost:3000");
 
-const UserList = ({ users, onSelectUser, setNumber }) => {
-  function limpiarNumero(numero) {
-    const prefijo = "591";
-    const sufijo = "@c.us";
-
-    // Verificar si el número empieza con el prefijo y termina con el sufijo
-    if (numero.startsWith(prefijo) && numero.endsWith(sufijo)) {
-      // Eliminar el prefijo y el sufijo
-      return numero.slice(prefijo.length, numero.length - sufijo.length);
-    }
-
-    // Si no cumple con el formato esperado, devolver el número original
-    return numero;
-  }
-  return (
-    <div className="relative shadow-md sm:rounded-lg">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr>
-            <th scope="col" className="p-4">
-              <div className="flex items-center">
-                <label htmlFor="checkbox-all-search" className="sr-only">
-                  checkbox
-                </label>
+const UserList = ({ users, onSelectUser }) => (
+  <div className="relative shadow-md sm:rounded-lg">
+    <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" className="p-4">
+            <div className="flex items-center">
+              <label htmlFor="checkbox-all-search" className="sr-only">
+                checkbox
+              </label>
+            </div>
+          </th>
+          <th scope="col" className="px-6 py-3">
+            Usuario
+          </th>
+          <th scope="col" className="px-6 py-3">
+            Acción
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {users.map((user, index) => (
+          <tr
+            key={index}
+            className="bg-white border-b hover:bg-gray-50"
+            onClick={() => onSelectUser(user)}
+          >
+            <td className="w-4 p-4">{index + 1}</td>
+            <th
+              scope="row"
+              className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
+            >
+              <BiSolidUser className="w-10 h-10" />
+              <div className="ps-3">
+                <div className="text-base font-semibold">{user.notifyName}</div>
+                <div className="font-normal text-gray-500">{user.from}</div>
               </div>
             </th>
-            <th scope="col" className="px-6 py-3">
-              Usuario
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Acción
-            </th>
+            <td className="px-6 py-4">
+              <button className="text-sm p-2 rounded-2xl border">
+                Seleccionar
+              </button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {users.map((user, index) => (
-            <tr
-              key={index}
-              className="bg-white border-b hover:bg-gray-50"
-              onClick={() => onSelectUser(user)}
-            >
-              <td className="w-4 p-4">{index + 1}</td>
-              <th
-                scope="row"
-                className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
-              >
-                <BiSolidUser className="w-10 h-10" />
-                <div className="ps-3">
-                  <div className="text-base font-semibold">
-                    {user.notifyName}
-                  </div>
-                  <div className="font-normal text-gray-500">{user.from}</div>
-                </div>
-              </th>
-              <td className="px-6 py-4">
-                <button
-                  onClick={() => setNumber(limpiarNumero(user.from))}
-                  className="text-sm p-2 rounded-2xl border"
-                >
-                  Seleccionar
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+        ))}
+      </tbody>
+    </table>
+  </div>
+);
+
+const Chat = ({ user, onBack, messages }) => (
+  <div>
+    <button
+      onClick={onBack}
+      className="mb-4 p-5 shadow-md border border-gray-200 rounded-lg mt-3 flex justify-between items-center hover:shadow-xl"
+    >
+      Regresar <BiRightArrowAlt className="ml-2" />
+    </button>
+    <h2 className="text-2xl font-semibold mb-4">Chat con {user.notifyName}</h2>
+    <div className="p-4 border border-gray-200 rounded-xl">
+      {messages.map((msg, index) => (
+        <p key={index}>{msg.body}</p>
+      ))}
     </div>
-  );
-};
+    <div className="mt-4">
+      <input
+        type="text"
+        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-4"
+        placeholder="Escribe un mensaje..."
+      />
+    </div>
+  </div>
+);
 
 export default function Page() {
   const { productos, productosFiltrados } = useProductos();
@@ -95,8 +99,6 @@ export default function Page() {
   const [loadingButton, setLoadingButton] = useState("");
   const [users, setUsers] = useState([]);
   const [messages, setMessages] = useState([]);
-  const [qr, setQr] = useState("");
-  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (busqueda.length > 0) {
@@ -145,18 +147,8 @@ export default function Page() {
       }
     });
 
-    socket.on("qr", (qr) => {
-      setQr(qr);
-    });
-
-    socket.on("status", (status) => {
-      setStatus(status);
-    });
-
     return () => {
       socket.off("new_message");
-      socket.off("qr");
-      socket.off("status");
     };
   }, [selectedUser]);
 
@@ -206,12 +198,7 @@ export default function Page() {
         <div className="p-6 border border-gray-200 shadow-md rounded-xl">
           <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-3">
             <div>
-              {qr ? (
-                <img src={qr} alt="QR Code" className="w-full" />
-              ) : (
-                <p>Esperando código QR...</p>
-              )}
-              <p>Estado: {status}</p>
+              <img src="/qr.png" alt="QR Code" className="w-full" />
               <div className="relative mb-6">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
                   <BiMobileAlt className="text-gray-400" />
@@ -329,11 +316,16 @@ export default function Page() {
           </div>
         </div>
         <div>
-          <UserList
-            users={users}
-            onSelectUser={setSelectedUser}
-            setNumber={setNumber}
-          />
+          {!selectedUser && (
+            <UserList users={users} onSelectUser={setSelectedUser} />
+          )}
+          {selectedUser && (
+            <Chat
+              user={selectedUser}
+              onBack={() => setSelectedUser(null)}
+              messages={messages}
+            />
+          )}
         </div>
       </div>
     </div>

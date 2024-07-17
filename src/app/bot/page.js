@@ -167,11 +167,14 @@ export default function Page() {
     console.log(action, number);
     setLoadingButton(action);
     try {
-      const response = await axios.post("http://localhost:3000/send-message", {
-        number,
-        action,
-        data: action === "producto" ? productIds : null,
-      });
+      const response = await axios.post(
+        "http://3bbg85z6-3000.brs.devtunnels.ms/send-message",
+        {
+          number,
+          action,
+          data: action === "producto" ? productIds : null,
+        }
+      );
       if (response.data.status === "success") {
         Swal.fire({
           icon: "success",

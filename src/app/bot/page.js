@@ -15,7 +15,7 @@ import {
 import FlexSearch from "flexsearch";
 import io from "socket.io-client";
 
-const socket = io("https://3bbg85z6-3000.brs.devtunnels.ms");
+const socket = io("http://3bbg85z6-3000.brs.devtunnels.ms");
 
 const UserList = ({ users, onSelectUser, setNumber }) => {
   function limpiarNumero(numero) {

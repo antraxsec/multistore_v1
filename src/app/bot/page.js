@@ -16,6 +16,7 @@ import FlexSearch from "flexsearch";
 import io from "socket.io-client";
 
 const socket = io("https://3bbg85z6-3000.brs.devtunnels.ms");
+//const socket = io("http://localhost:3000");
 
 const UserList = ({ users, onSelectUser, setNumber }) => {
   function limpiarNumero(numero) {
@@ -169,6 +170,7 @@ export default function Page() {
     try {
       const response = await axios.post(
         "https://3bbg85z6-3000.brs.devtunnels.ms/send-message",
+        //"http://localhost:3000/send-message",
         {
           number,
           action,
@@ -229,6 +231,14 @@ export default function Page() {
               </div>
             </div>
             <div>
+              <button
+                onClick={() => sendMessage("sendVideo")}
+                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                disabled={loadingButton === "sendVideo"}
+              >
+                {loadingButton === "sendVideo" ? "Cargando..." : "SendVideo"}
+                <BiSolidHand className="ml-2" />
+              </button>
               <button
                 onClick={() => sendMessage("promocion")}
                 className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"

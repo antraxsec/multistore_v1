@@ -3,6 +3,7 @@ import { useProductos } from "@/context/Context";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { CiGrid41 } from "react-icons/ci";
 
 export default function Aside() {
   const router = useRouter();
@@ -91,6 +92,15 @@ export default function Aside() {
               <span className="ms-3 text-gray-400">Estadistica</span>
             </Link>
           </li> */}
+          <li>
+            <Link
+              href="/home"
+              class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+            >
+              <CiGrid41 className="w-6 h-6 text-gray-500" />
+              <span class="ms-3">Home</span>
+            </Link>
+          </li>
           <li>
             <a
               href="#"

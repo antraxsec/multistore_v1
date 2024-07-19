@@ -14,6 +14,8 @@ import {
 } from "react-icons/bi";
 import FlexSearch from "flexsearch";
 import io from "socket.io-client";
+import Nav from "@/components/Nav";
+import Aside from "@/components/Aside";
 
 const socket = io("https://3bbg85z6-3000.brs.devtunnels.ms");
 //const socket = io("http://localhost:3000");
@@ -122,7 +124,7 @@ export default function Page() {
 
       if (coincidencias.length > 0) {
         console.log("si hay productosBruto");
-        console.log(coincidencias);
+        // console.log(coincidencias);
         setFiltros(coincidencias);
       } else {
         setFiltros([]);
@@ -165,7 +167,7 @@ export default function Page() {
   const [productIds, setProductIds] = useState("");
 
   const sendMessage = async (action) => {
-    console.log(action, number);
+    //console.log(action, number);
     setLoadingButton(action);
     try {
       const response = await axios.post(
@@ -206,147 +208,162 @@ export default function Page() {
   };
 
   return (
-    <div className="px-2 mt-3">
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-3">
-        <div className="p-6 border border-gray-200 shadow-md rounded-xl">
-          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-3">
-            <div>
-              {qr ? (
-                <img src={qr} alt="QR Code" className="w-full" />
-              ) : (
-                <p>Esperando código QR...</p>
-              )}
-              <p>Estado: {status}</p>
-              <div className="relative mb-6">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-                  <BiMobileAlt className="text-gray-400" />
+    <div>
+      <Nav />
+      <Aside />
+      <div class="p-4 sm:ml-64">
+        <div class=" dark:border-gray-700 mt-14">
+          <div className="px-2 mt-3">
+            <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-3">
+              <div className="p-6 col-span-2 border border-gray-200 shadow-md rounded-xl">
+                <div className="">
+                  <div>
+                    {qr ? (
+                      <img src={qr} alt="QR Code" className="w-full" />
+                    ) : (
+                      <p>Esperando código QR o logueado</p>
+                    )}
+                    <p>Estado: {status}</p>
+                    <div className="relative mb-6">
+                      <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                        <BiMobileAlt className="text-gray-400" />
+                      </div>
+                      <input
+                        type="text"
+                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4"
+                        placeholder="Celular"
+                        value={number}
+                        onChange={(e) => setNumber(e.target.value)}
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-3 gap-2">
+                    <button
+                      onClick={() => sendMessage("sendVideo")}
+                      className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                      disabled={loadingButton === "sendVideo"}
+                    >
+                      {loadingButton === "sendVideo" ? "Enviando..." : "Video"}
+                      <BiSolidHand className="ml-2" />
+                    </button>
+                    <button
+                      onClick={() => sendMessage("promocion")}
+                      className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                      disabled={loadingButton === "promocion"}
+                    >
+                      {loadingButton === "promocion"
+                        ? "Enviando..."
+                        : "Promoción"}
+                      <BiSolidHand className="ml-2" />
+                    </button>
+
+                    <button
+                      onClick={() => sendMessage("ubicacion")}
+                      className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                      disabled={loadingButton === "ubicacion"}
+                    >
+                      {loadingButton === "ubicacion"
+                        ? "Enviando..."
+                        : "Ubicación"}
+                      <BiSolidBeenHere className="ml-2" />
+                    </button>
+                    <button
+                      onClick={() => sendMessage("procesoCompra")}
+                      className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                      disabled={loadingButton === "procesoCompra"}
+                    >
+                      {loadingButton === "procesoCompra"
+                        ? "Enviando..."
+                        : "Proceso Compra"}
+                      <BiSolidBeenHere className="ml-2" />
+                    </button>
+                    <button
+                      onClick={() => sendMessage("formasPago")}
+                      className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
+                      disabled={loadingButton === "formasPago"}
+                    >
+                      {loadingButton === "formasPago"
+                        ? "Enviando..."
+                        : "Forma de Pago"}
+                      <BiSolidBeenHere className="ml-2" />
+                    </button>
+                  </div>
                 </div>
-                <input
-                  type="text"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4"
-                  placeholder="Celular"
-                  value={number}
-                  onChange={(e) => setNumber(e.target.value)}
+                <div className="relative mb-6">
+                  <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                    <BiSearch />
+                  </div>
+                  <input
+                    type="text"
+                    value={busqueda}
+                    onChange={(e) => setBusqueda(e.target.value.toLowerCase())}
+                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4"
+                    placeholder="Buscar"
+                  />
+                </div>
+                <div className="relative overflow-x-auto">
+                  <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                      <tr>
+                        <th scope="col" className="px-6 py-3">
+                          SKU
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Producto
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Precio
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Acción
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {filtros.map((row, i) => (
+                        <tr key={i} className="bg-white border-b">
+                          <th
+                            scope="row"
+                            className="px-6 py-4 font-medium text-gray-900 "
+                          >
+                            <small>{row.id_producto}</small>
+                          </th>
+                          <td className="px-6 py-4">
+                            {" "}
+                            {row.referencia_producto}
+                          </td>
+                          <td className="px-6 py-4">
+                            {row.precios[0]?.valor_precio}
+                          </td>
+                          <td className="px-6 py-4">
+                            <button
+                              onClick={() => {
+                                setProductIds(row.id_producto);
+                                sendMessage("producto");
+                              }}
+                              className="text-sm p-2 rounded-2xl border shadow-md hover:shadow-lg hover:border-gray-300"
+                              disabled={loadingButton === "producto"}
+                            >
+                              {loadingButton === "producto"
+                                ? "Enviando..."
+                                : "Enviar"}
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <UserList
+                  users={users}
+                  onSelectUser={setSelectedUser}
+                  setNumber={setNumber}
                 />
               </div>
             </div>
-            <div>
-              <button
-                onClick={() => sendMessage("sendVideo")}
-                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
-                disabled={loadingButton === "sendVideo"}
-              >
-                {loadingButton === "sendVideo" ? "Cargando..." : "SendVideo"}
-                <BiSolidHand className="ml-2" />
-              </button>
-              <button
-                onClick={() => sendMessage("promocion")}
-                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
-                disabled={loadingButton === "promocion"}
-              >
-                {loadingButton === "promocion" ? "Cargando..." : "Promoción"}
-                <BiSolidHand className="ml-2" />
-              </button>
-
-              <button
-                onClick={() => sendMessage("ubicacion")}
-                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
-                disabled={loadingButton === "ubicacion"}
-              >
-                {loadingButton === "ubicacion" ? "Cargando..." : "Ubicación"}
-                <BiSolidBeenHere className="ml-2" />
-              </button>
-              <button
-                onClick={() => sendMessage("procesoCompra")}
-                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
-                disabled={loadingButton === "procesoCompra"}
-              >
-                {loadingButton === "procesoCompra"
-                  ? "Cargando..."
-                  : "Enviar Proceso de Compra"}
-                <BiSolidBeenHere className="ml-2" />
-              </button>
-              <button
-                onClick={() => sendMessage("formasPago")}
-                className="p-4 rounded-lg border border-gray-300 flex justify-center items-center shadow-md mb-4 w-full"
-                disabled={loadingButton === "formasPago"}
-              >
-                {loadingButton === "formasPago"
-                  ? "Cargando..."
-                  : "Formas de Pago"}
-                <BiSolidBeenHere className="ml-2" />
-              </button>
-            </div>
           </div>
-          <div className="relative mb-6">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
-              <BiSearch />
-            </div>
-            <input
-              type="text"
-              value={busqueda}
-              onChange={(e) => setBusqueda(e.target.value.toLowerCase())}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-4"
-              placeholder="Buscar"
-            />
-          </div>
-          <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500">
-              <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-                <tr>
-                  <th scope="col" className="px-6 py-3">
-                    SKU
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Producto
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Precio
-                  </th>
-                  <th scope="col" className="px-6 py-3">
-                    Acción
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {filtros.map((row, i) => (
-                  <tr key={i} className="bg-white border-b">
-                    <th
-                      scope="row"
-                      className="px-6 py-4 font-medium text-gray-900 "
-                    >
-                      <small>{row.id_producto}</small>
-                    </th>
-                    <td className="px-6 py-4"> {row.referencia_producto}</td>
-                    <td className="px-6 py-4">
-                      {row.precios[0]?.valor_precio}
-                    </td>
-                    <td className="px-6 py-4">
-                      <button
-                        onClick={() => {
-                          setProductIds(row.id_producto);
-                          sendMessage("producto");
-                        }}
-                        className="text-sm p-2 rounded-2xl border shadow-md hover:shadow-lg hover:border-gray-300"
-                        disabled={loadingButton === "producto"}
-                      >
-                        {loadingButton === "producto"
-                          ? "Cargando..."
-                          : "Enviar"}
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div>
-          <UserList
-            users={users}
-            onSelectUser={setSelectedUser}
-            setNumber={setNumber}
-          />
         </div>
       </div>
     </div>

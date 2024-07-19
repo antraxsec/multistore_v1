@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Aside from "../componets/Aside";
-import Nav from "../componets/Nav";
 import SalesComponent from "./SalesComponent";
+import Nav from "@/components/Nav";
+import Aside from "@/components/Aside";
 
 export default function page() {
   const [usuarios, setUsuarios] = useState([]);

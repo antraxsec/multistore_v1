@@ -237,7 +237,7 @@ export default function Page() {
               >
                 {loadingButton === "procesoCompra"
                   ? "Cargando..."
-                  : "Enviar Proceso de Compra"}
+                  : "Proceso de Compra"}
                 <BiSolidBeenHere className="ml-2" />
               </button>
               <button

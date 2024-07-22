@@ -19,6 +19,7 @@ import Aside from "@/components/Aside";
 
 const socket = io("https://3bbg85z6-3000.brs.devtunnels.ms");
 //const socket = io("http://localhost:3000");
+//new
 
 const UserList = ({ users, onSelectUser, setNumber }) => {
   function limpiarNumero(numero) {
